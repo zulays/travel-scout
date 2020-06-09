@@ -163,7 +163,7 @@ The goal of this application is to help users plan their upcoming trip. They wil
 
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
-[Wireframe mock up can be found here](https://wireframe.cc/PgXbDg)
+[Wireframe mock up can be found here](https://xd.adobe.com/view/3711b41b-6afe-45c2-78e3-353cacd03326-4120/?fullscreen)
 
 
 #### MVP 
@@ -183,7 +183,7 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 - Create callback function that will populate information after country value is inputted in search bar
 - Add media queries for responsive design
 - Refine CSS styling
-- Use 3rd API to populate currency conversion -- TBD, maybe not
+- Use 3rd API to populate weather ticker tape above the footer
 
 ## Project Schedule
 
