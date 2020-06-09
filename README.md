@@ -163,7 +163,7 @@ The goal of this application is to help users plan their upcoming trip. They wil
 
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
-[Wireframe mock up can be found here:](https://wireframe.cc/PgXbDg)
+[Wireframe mock up can be found here](https://wireframe.cc/PgXbDg)
 
 
 #### MVP 
@@ -198,7 +198,7 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 
 ## Priority Matrix
 
-[Priority Matrix can be found here:](https://app.conceptboard.com/board/et2x-bhim-tko2-6dx3-5cdz)
+[Priority Matrix can be found here](https://app.conceptboard.com/board/et2x-bhim-tko2-6dx3-5cdz)
 
 ## Timeframes
 
