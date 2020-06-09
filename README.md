@@ -208,9 +208,9 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 | Basic CSS Implementation | M | 3hrs| --hrs | --hrs |
 | JS Functionality | H | 6hrs| --hrs | --hrs |
 | Working with API | H | 12hrs| --hrs | --hrs |
-| Advanced CSS Implementation | M | 5hrs| --hrs | --hrs |
+| Advanced CSS Implementation | M | 8hrs| --hrs | --hrs |
 | Application QA | H | 6hrs| --hrs | --hrs |
-| Total | H | 33hrs| --hrs | --hrs |
+| Total | H | 36hrs| --hrs | --hrs |
 
 ## Code Snippet
 
