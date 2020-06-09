@@ -6,11 +6,157 @@ The name of your project.
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+The goal of this application is to help users plan their upcoming trip. They will input their desired location into a search bar and using APIs, country information (flag?, capital, currencies, and languages spoken) and travel warnings will be populated upon their form submission. 
+
 
 ## API and Data Sample
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+[Country Data API:](https://restcountries.eu/rest/v2/all) 
+
+```[
+    {
+        "name": "Afghanistan",
+        "topLevelDomain": [
+            ".af"
+        ],
+        "alpha2Code": "AF",
+        "alpha3Code": "AFG",
+        "callingCodes": [
+            "93"
+        ],
+        "capital": "Kabul",
+        "altSpellings": [
+            "AF",
+            "Afġānistān"
+        ],
+        "region": "Asia",
+        "subregion": "Southern Asia",
+        "population": 27657145,
+        "latlng": [
+            33.0,
+            65.0
+        ],
+        "demonym": "Afghan",
+        "area": 652230.0,
+        "gini": 27.8,
+        "timezones": [
+            "UTC+04:30"
+        ],
+        "borders": [
+            "IRN",
+            "PAK",
+            "TKM",
+            "UZB",
+            "TJK",
+            "CHN"
+        ],
+        "nativeName": "افغانستان",
+        "numericCode": "004",
+        "currencies": [
+            {
+                "code": "AFN",
+                "name": "Afghan afghani",
+                "symbol": "؋"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "ps",
+                "iso639_2": "pus",
+                "name": "Pashto",
+                "nativeName": "پښتو"
+            },
+            {
+                "iso639_1": "uz",
+                "iso639_2": "uzb",
+                "name": "Uzbek",
+                "nativeName": "Oʻzbek"
+            },
+            {
+                "iso639_1": "tk",
+                "iso639_2": "tuk",
+                "name": "Turkmen",
+                "nativeName": "Türkmen"
+            }
+```
+
+[Travel Warnings API:](https://www.travel-advisory.info/api) 
+
+```{
+    "api_status": {
+        "request": {
+            "item": "not specified"
+        },
+        "reply": {
+            "cache": "cached",
+            "code": 200,
+            "status": "ok",
+            "note": "The api works, we could fetch countries.",
+            "count": 238
+        }
+    },
+    "data": {
+        "AD": {
+            "iso_alpha2": "AD",
+            "name": "Andorra",
+            "continent": "EU",
+            "advisory": {
+                "score": 2.79999999999999982236431605997495353221893310546875,
+                "sources_active": 4,
+                "message": "",
+                "updated": "2020-06-08 07:22:37",
+                "source": "https://www.travel-advisory.info/andorra"
+            }
+        },
+        "AE": {
+            "iso_alpha2": "AE",
+            "name": "United Arab Emirates",
+            "continent": "AS",
+            "advisory": {
+                "score": 3.100000000000000088817841970012523233890533447265625,
+                "sources_active": 7,
+                "message": "",
+                "updated": "2020-06-08 07:22:37",
+                "source": "https://www.travel-advisory.info/united-arab-emirates"
+            }
+        },
+        "AF": {
+            "iso_alpha2": "AF",
+            "name": "Afghanistan",
+            "continent": "AS",
+            "advisory": {
+                "score": 5,
+                "sources_active": 10,
+                "message": "",
+                "updated": "2020-06-08 07:22:37",
+                "source": "https://www.travel-advisory.info/afghanistan"
+            }
+        },
+        "AG": {
+            "iso_alpha2": "AG",
+            "name": "Antigua and Barbuda",
+            "continent": "NA",
+            "advisory": {
+                "score": 3,
+                "sources_active": 3,
+                "message": "",
+                "updated": "2020-06-08 07:22:37",
+                "source": "https://www.travel-advisory.info/antigua-and-barbuda"
+            }
+        },
+        "AI": {
+            "iso_alpha2": "AI",
+            "name": "Anguilla",
+            "continent": "NA",
+            "advisory": {
+                "score": 3,
+                "sources_active": 3,
+                "message": "",
+                "updated": "2020-06-08 07:22:37",
+                "source": "https://www.travel-advisory.info/anguilla"
+            }
+        },
+```
 
 ## Wireframes
 
@@ -18,62 +164,59 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 
 [Wireframe mock up can be found here:]()
 
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Set up access for external API
+- Connect API to form 
+- Input location value (city, country) into search bar
+- Add event listener for submit button to run function and clear value from search bar
+- Click button to call function that will populate country info 
+- Deploy site with GitPages for real-time access
+ 
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Add second API to populate travel warnings for desired location
+- Connect second API to event listener for submit button (or to primary API)
+- Create callback function that will populate information after country value is inputted in search bar
+- Add media queries for responsive design
+- Refine CSS styling
+- Use 3rd API to populate currency conversion -- TBD, maybe not
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|June 8| Project Prompt | Incomplete
-|June 9| Wireframes / Priority Matrix / Timeframes | Incomplete
-|June 10| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|June 11| Initial Clickable Model  | Incomplete
-|June 12| MVP | Incomplete
+|June 8| Project Proposal | Complete
+|June 9| Begin Core Application Structure (HTML, CSS, etc.) + Access API | Incomplete
+|June 10| Test API + MVP functionality | Incomplete
+|June 11| Continue API testing + implement advanced CSS/Flexbox | Incomplete
+|June 12| Post MVP execution + Application QA | Incomplete
 |June 15| Present | Incomplete
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+[Priority Matrix can be found here:]()
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Basic HTML Setup | M | 1hrs| --hrs | --hrs |
+| Basic CSS Implementation | M | 3hrs| --hrs | --hrs |
+| JS Functionality | H | 6hrs| --hrs | --hrs |
+| Working with API | H | 12hrs| --hrs | --hrs |
+| Advanced CSS Implementation | M | 5hrs| --hrs | --hrs |
+| Application QA | H | 6hrs| --hrs | --hrs |
+| Total | H | 33hrs| --hrs | --hrs |
 
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+to be determined
 ```
 
 ## Change Log
