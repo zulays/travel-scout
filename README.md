@@ -12,7 +12,7 @@ The goal of this application is to help users plan their upcoming trip. They wil
 
 ## API and Data Sample
 
-[Country Data API:](https://restcountries.eu/rest/v2/all) 
+[Country Data API:](https://restcountries.eu/) 
 
 ```[
     {
@@ -81,7 +81,7 @@ The goal of this application is to help users plan their upcoming trip. They wil
             }
 ```
 
-[Travel Warnings API:](https://www.travel-advisory.info/api) 
+[Travel Warnings API:](https://www.travel-advisory.info/data-api) 
 
 ```{
     "api_status": {
@@ -133,31 +133,19 @@ The goal of this application is to help users plan their upcoming trip. They wil
                 "source": "https://www.travel-advisory.info/afghanistan"
             }
         },
-        "AG": {
-            "iso_alpha2": "AG",
-            "name": "Antigua and Barbuda",
-            "continent": "NA",
-            "advisory": {
-                "score": 3,
-                "sources_active": 3,
-                "message": "",
-                "updated": "2020-06-08 07:22:37",
-                "source": "https://www.travel-advisory.info/antigua-and-barbuda"
-            }
-        },
-        "AI": {
-            "iso_alpha2": "AI",
-            "name": "Anguilla",
-            "continent": "NA",
-            "advisory": {
-                "score": 3,
-                "sources_active": 3,
-                "message": "",
-                "updated": "2020-06-08 07:22:37",
-                "source": "https://www.travel-advisory.info/anguilla"
-            }
-        },
+```    
+
+[Currency Conversion API:](https://www.currencyconverterapi.com/docs)
+
 ```
+{
+    "USD_PHP": 50.000499,
+    "PHP_USD": 0.02
+}
+```
+
+    
+
 
 ## Wireframes
 
@@ -170,20 +158,23 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 
 - Set up access for external API
 - Connect API to form 
-- Input location value (city, country) into search bar
-- Add event listener for submit button to run function and clear value from search bar
-- Click button to call function that will populate country info 
-- Deploy site with GitPages for real-time access
- 
+- Build input field with search button for country value input
+- Add "click" event listener for submit button
+- Run function to pull country data from API
+- Click button to run function 
+- Render selected country data (name, flag, capital city, currencies, languages spoken)
+
 
 #### PostMVP  
 
 - Add second API to populate travel warnings for desired location
 - Connect second API to event listener for submit button (or to primary API)
-- Create callback function that will populate information after country value is inputted in search bar
+- Create callback function that will sync with event listener to populate country warnings after button is clicked
 - Add media queries for responsive design
-- Refine CSS styling
-- Use 3rd API to populate weather ticker tape above the footer
+- Refine CSS styling 
+- Use 3rd API to populate real-time currency exchange rate
+- Build function to link country currency value with conversion API call
+
 
 ## Project Schedule
 
@@ -204,13 +195,17 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Basic HTML Setup | M | 1hrs| --hrs | --hrs |
+| Basic HTML Setup + Pseudocode | M | 2hrs| --hrs | --hrs |
 | Basic CSS Implementation | M | 3hrs| --hrs | --hrs |
-| JS Functionality | H | 6hrs| --hrs | --hrs |
-| Working with API | H | 12hrs| --hrs | --hrs |
-| Advanced CSS Implementation | M | 8hrs| --hrs | --hrs |
+| Base JS Structure | H | 3hrs| --hrs | --hrs |
+| Building JS Algorithms for API | H | 3hrs| --hrs | --hrs |
+| Pre-lim API Setup + Access | H | 2hrs| --hrs | --hrs |
+| API sync with JS | H | 5hrs| --hrs | --hrs |
+| API Testing + Functionality | H | 5hrs| --hrs | --hrs |
+| Advanced CSS Add-ins (implementing themes + additional styling) | M | 4hrs| --hrs | --hrs |
+| Finalize Advanced CSS + Testing/Tweaks | M | 4hrs| --hrs | --hrs |
 | Application QA | H | 6hrs| --hrs | --hrs |
-| Total | H | 36hrs| --hrs | --hrs |
+| Total | H | 37hrs| --hrs | --hrs |
 
 ## Code Snippet
 
