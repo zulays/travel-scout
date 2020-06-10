@@ -1,1 +1,42 @@
-insert css here
+body{
+  text-align: center;
+
+
+
+}
+
+header {
+  background: url()
+  background-size: cover;  
+
+}
+
+.country-input {
+  margin: 100px;
+  background-color: #f5f5f5;
+  text-align: center;
+  display: block;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+button {
+    margin: 12px;
+    background-color: #f5f5f5;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #000000;
+    border-radius: 4px;
+  }
+
+a {
+  text-decoration: none;
+}
+
+
+footer {
+  text-decoration: none;
+}
+
+
+@media 
