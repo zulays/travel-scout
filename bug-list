@@ -5,6 +5,8 @@ Shay helped me find out how to link the country API with the travel warnings API
 had to use Object.values and .filter to grab the object of objects to be able to grab the information from advisory to be able to include that in the HTML
 
 
-[UNRESOLVED] Cannot render currency code in API #3
+[RESOLVED] Cannot render currency code in API #3
 Able to grab currency code value, however when trying to attach it, it results undefined. 
 URL manipulation could be cause of conflict....? 
+Shay assisted in creating chain from API #1 - API #3. Needed to declare variable for data and use as argument when calling secondary function. Third function is currently called from within function #2
+

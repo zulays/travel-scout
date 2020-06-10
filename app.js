@@ -32,13 +32,11 @@ async function getCountryData() {
       <p>Primary language spoken is ${country.languages[0].name}</p>
       `
            })
-
     let currVal = countries[0].currencies[0].code
-   
     console.log(response)
+
     //runs the secondary function to pull API #2 data via API #1, while creating a link to allow API #3 to run
     getTravelData(countries[0].alpha2Code,currVal)
-   
 
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
@@ -46,8 +44,6 @@ async function getCountryData() {
 }
 submitBtn.addEventListener("click", () => {
   getCountryData()
-
-// convertBtn.addEventListener("click", getCurrencyData())
 })
 
 
@@ -97,8 +93,10 @@ async function getCurrencyData(money) {
   }
 }
 
+// convertBtn.addEventListener("click", getCurrencyData())
 
-// //currency conversion function
+
+//Helper function - Currency Conversion
 //   let baseCurrency = 1
 //   let newCurrency = money
 //   let exchange = Math.float()
