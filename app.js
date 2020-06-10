@@ -10,8 +10,8 @@ const currencyUrl = `${currencyDomain}&apiKey=${currencyKey}`
 let submitBtn = document.querySelector("#button")
 let input = document.querySelector("#blank")
 const countryDiv = document.querySelector(".country-data")
-const travelAdvisory = document.querySelector(".travel-warn")
-const currency = document.querySelector(".currency")
+const warningDiv = document.querySelector(".travel-warn")
+const currencyDiv = document.querySelector(".currency")
 
 
 
@@ -20,14 +20,10 @@ async function getCountryData() {
   try {
     let response = await axios.get(`${countryUrl}${input.value}`)
     let countries = response.data
-    // let countryValue = countries[Math.floor(Math.random * countries.length)]
-    // country.innerHTML = ""
-    // console.log(countryValue)
 
     for (let i = 0; i > countries.length; i++) {
       console.log(countries[i])
     }
-
     countries.forEach((country) => {
       countryDiv.innerHTML += `
       <h2>${country.name}</h2>
@@ -37,30 +33,45 @@ async function getCountryData() {
       <p>Primary language spoken are ${country.languages[0].name}</p>
       `
     })
-
     console.log(response)
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
 }
-
 submitBtn.addEventListener("click", () => {
   getCountryData()
+  // getTravelData(input.value)
+  // getCurrencyData()
 })
 
 
 
 // //API #2 for travel warnings
-// async function getTravelData() {
-//   try {
-//     let response = await axios.get(`${travelWarnUrl}`)
-//     // let warn = response.data.ç
-//     console.log(response)
-//   } catch (error) {
-//     console.log(`This is what went wrong: ${error}`)
-//   }
-// }
-// getTravelData()
+async function getTravelData() {
+  try {
+    let response = await axios.get(`${travelWarnUrl}`)
+    let travelWarn = response.data.data
+
+    for (let i = 0; i > advisory.length; i++) {
+      console.log(advisory[i])
+    }
+
+    travelWarn.forEach((warn) => {
+      warningDiv.innerHTML += `
+      <h2>${warn.name}</h2>
+      <p>Degree of risk: ${warn.score}/5</p>
+      <p>Active source count: ${warn.advisory.score}</p>
+      <p>${warn.advisory.message}</p>
+      <p>Last updated: ${warn.advisory.updated}</p>
+      <p>View more data: ${warn.advisory.sources_active}</p>
+      `
+    })
+    console.log(response)
+  } catch (error) {
+    console.log(`Uh Oh! This is what went wrong: ${error}`)
+  }
+}
+getTravelData()
 
 
 
@@ -72,6 +83,8 @@ submitBtn.addEventListener("click", () => {
 //     let response = await axios.get(`${currencyUrl}`)
 //     let currency = response.data
 //     console.log(response)
+
+//     //math equation in here
 //   } catch (error) {
 //     console.log(`This is what went wrong: ${error}`)
 //   }
