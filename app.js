@@ -1,19 +1,18 @@
 const countryUrl = "https://restcountries.eu/rest/v2/name/"
 const travelWarnUrl = "https://www.travel-advisory.info/api"
 
-const currencyDomain = "https://free.currconv.com/api/v7/convert?q=USD_EUR,EUR_USD&compact=ultra"
+const currencyDomain = "https://free.currconv.com/api/v7/convert?q=USD_"
 const currencyKey = config.MY_KEY
-const currencyUrl = `${currencyDomain}&apiKey=${currencyKey}`
+
 
 
 
 let submitBtn = document.querySelector("#button")
 let input = document.querySelector("#blank")
-const countryDiv = document.querySelector(".country-data")
+const countryDiv = document.querySelector(".country-details")
 const warningDiv = document.querySelector(".travel-warn")
-const currencyDiv = document.querySelector(".currency")
-
-
+let currencyInput = document.querySelector("#blank-code")
+let convertBtn = document.querySelector("#currency-button")
 
 //API #1 for country data
 async function getCountryData() {
@@ -27,15 +26,19 @@ async function getCountryData() {
     countries.forEach((country) => {
       countryDiv.innerHTML += `
       <h2>${country.name}</h2>
-      <img src = ${country.flag}>
+      <img src=${country.flag}>
       <p>Capital City is ${country.capital}</p>
-      <p>Main currency used is ${country.currencies[0].code}</p>
+      <p class="currency-name">Main currency used is ${country.currencies[0].code}</p>
       <p>Primary language spoken is ${country.languages[0].name}</p>
       `
-      })
-    console.log(response)
-    getTravelData(countries[0].alpha2Code)
+           })
 
+    let currVal = countries[0].currencies[0].code
+   
+    console.log(response)
+    //runs the secondary function to pull API #2 data via API #1, while creating a link to allow API #3 to run
+    getTravelData(countries[0].alpha2Code,currVal)
+   
 
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
@@ -43,20 +46,16 @@ async function getCountryData() {
 }
 submitBtn.addEventListener("click", () => {
   getCountryData()
-  
-  // getCurrencyData()
+
+// convertBtn.addEventListener("click", getCurrencyData())
 })
 
 
-
 // //API #2 for travel warnings
-async function getTravelData(code) {  
+async function getTravelData(code,money) {  
   try {
     let response = await axios.get(`${travelWarnUrl}`)
     let travelWarn = response.data.data
-    // console.log(response)
-    // console.log(travelWarn)
-
     for (let i = 0; i > travelWarn.length; i++) {
       console.log(travelWarn[i])
   }
@@ -74,30 +73,39 @@ console.log(countryVal)
       <p>Last updated: ${countryVal[0].advisory.updated}</p>
       <p><a href=${countryVal[0].advisory.source}>View more data on site</a></p>
       `
+      //calls terciary function while getting information from API #1 via chained API #2
+      getCurrencyData(money)
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
 }
-// getTravelData()
 
 
+//API #3 for currency conversion 
+async function getCurrencyData(money) {
+    try {
+    let response = await axios.get(`${currencyDomain}${money},${money}_USD&compact=ultra&apiKey=${currencyKey}`)
+    let currency = response.data
+    console.log(response)
+
+    //defines the currency code for conversion 
+  currencyInput.value = money
+    
+    //helper function --- math equation in here
+  } catch (error) {
+    console.log(`This is what went wrong: ${error}`)
+  }
+}
+
+
+// //currency conversion function
+//   let baseCurrency = 1
+//   let newCurrency = money
+//   let exchange = Math.float()
+
+//   function currencyConv(baseCurrency, newCurrency) {
+//     return base
   
- // <h2>${nameOutput}</h2>
-    // <p>Degree of risk: ${nameOutput} out of 5</p>
-    // <p>Active source count: ${activeSourceOutput}</p>
-    // <p>Last updated: ${timeOutput}</p>
-    // <p>View more data: ${sourceOutput}</p>
-
-// //API #3 for currency conversion 
-// async function getCurrencyData() {
-//   try {
-//     let response = await axios.get(`${currencyUrl}`)
-//     let currency = response.data
-//     console.log(response)
-
-//     //math equation in here
-//   } catch (error) {
-//     console.log(`This is what went wrong: ${error}`)
-//   }
-// }
-// getCurrencyData()
+// // }
+// // // console.log(currencyConv(1, ))
+// // // currencyConv()

@@ -2,14 +2,12 @@ body{
   text-align: center;
   font-family: Allerta, sans-serif;
   font-size: 14px;
-
 }
 
 header {
   background: url();
   background-size: cover;  
   font-family: Allerta Stencil, sans-serif;
-
 }
 
 div > h1 {
@@ -25,7 +23,7 @@ div > h1 {
 }
 
 .country-input,
-.countrydetails-panel,
+.countrydetails-container,
 .warn-container{
   position: relative;
   margin: 100px;
@@ -36,9 +34,13 @@ div > h1 {
   border-radius: 4px;
 }
 
+.flag{
+  max-width: 400px;
+  height: 300px;
+}
 
 .travel-warn,
-.country-data {
+.country-details {
   position: relative;
   background-color: #f5f5f5;
   margin: 30px;
@@ -58,6 +60,10 @@ button {
     border-radius: 4px;
   }
 
+#page2 {
+  display: inline-block;
+  font-family:;
+}
 
 a {
   text-decoration: none;
