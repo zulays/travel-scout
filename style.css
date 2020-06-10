@@ -1,6 +1,6 @@
 body{
   text-align: center;
-  font-family: ;
+  font-family: Allerta, sans-serif;
   font-size: 14px;
 
 }
@@ -8,15 +8,44 @@ body{
 header {
   background: url();
   background-size: cover;  
+  font-family: Allerta Stencil, sans-serif;
 
 }
 
-.country-input {
+div > h1 {
+  font-family: Allerta Stencil, sans-serif;
+  font-size: 25px;
+  position: relative;
+  margin: 10px;
+  padding: 20px 40px;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+.country-input,
+.countrydetails-panel,
+.warn-container{
+  position: relative;
   margin: 100px;
+  padding: 30px;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+
+.travel-warn,
+.country-data {
+  position: relative;
   background-color: #f5f5f5;
+  margin: 30px;
+  padding: 50px;
   text-align: center;
   display: block;
-  border: 2px solid #000000;
+  border: 2px solid #000050;
   border-radius: 4px;
 }
 
@@ -32,14 +61,32 @@ button {
 
 a {
   text-decoration: none;
+  color:#000040;
 }
 
 
 footer {
   text-decoration: none;
+  color:#000040;
 }
 
 
 @media  (max-width: 1920px){
 
 }
+
+
+
+
+/* how to get things to toggle show/hide
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script> */

@@ -29,53 +29,64 @@ async function getCountryData() {
       <h2>${country.name}</h2>
       <img src = ${country.flag}>
       <p>Capital City is ${country.capital}</p>
-      <p>Main currency used are ${country.currencies[0].code}</p>
-      <p>Primary language spoken are ${country.languages[0].name}</p>
+      <p>Main currency used is ${country.currencies[0].code}</p>
+      <p>Primary language spoken is ${country.languages[0].name}</p>
       `
-    })
+      })
     console.log(response)
+    getTravelData(countries[0].alpha2Code)
+
+
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
 }
 submitBtn.addEventListener("click", () => {
   getCountryData()
-  // getTravelData(input.value)
+  
   // getCurrencyData()
 })
 
 
 
 // //API #2 for travel warnings
-async function getTravelData() {
+async function getTravelData(code) {  
   try {
     let response = await axios.get(`${travelWarnUrl}`)
     let travelWarn = response.data.data
+    // console.log(response)
+    // console.log(travelWarn)
 
-    for (let i = 0; i > advisory.length; i++) {
-      console.log(advisory[i])
-    }
+    for (let i = 0; i > travelWarn.length; i++) {
+      console.log(travelWarn[i])
+  }
 
-    travelWarn.forEach((warn) => {
-      warningDiv.innerHTML += `
-      <h2>${warn.name}</h2>
-      <p>Degree of risk: ${warn.score}/5</p>
-      <p>Active source count: ${warn.advisory.score}</p>
-      <p>${warn.advisory.message}</p>
-      <p>Last updated: ${warn.advisory.updated}</p>
-      <p>View more data: ${warn.advisory.sources_active}</p>
+  let countryVal = Object.values(travelWarn).filter((value) => {
+    return value.iso_alpha2 === code && value.advisory
+  })
+console.log(countryVal)
+
+       warningDiv.innerHTML += `
+      <h2>${countryVal[0].name}</h2>
+      <p>Degree of risk: ${countryVal[0].advisory.score}/5</p>
+      <p>Active source count: ${countryVal[0].advisory.sources_active}</p>
+      <p>${countryVal[0].advisory.message}</p>
+      <p>Last updated: ${countryVal[0].advisory.updated}</p>
+      <p><a href=${countryVal[0].advisory.source}>View more data on site</a></p>
       `
-    })
-    console.log(response)
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
 }
-getTravelData()
+// getTravelData()
 
 
-
-
+  
+ // <h2>${nameOutput}</h2>
+    // <p>Degree of risk: ${nameOutput} out of 5</p>
+    // <p>Active source count: ${activeSourceOutput}</p>
+    // <p>Last updated: ${timeOutput}</p>
+    // <p>View more data: ${sourceOutput}</p>
 
 // //API #3 for currency conversion 
 // async function getCurrencyData() {

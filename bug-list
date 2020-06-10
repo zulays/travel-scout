@@ -1,0 +1,5 @@
+bug-list
+
+[RESOLVED] How to loop through API #2 
+Shay helped me find out how to link the country API with the travel warnings API 
+had to use Object.values and .filter to grab the object of objects to be able to grab the information from advisory to be able to include that in the HTML
