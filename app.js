@@ -2,8 +2,8 @@ const countryUrl = "https://restcountries.eu/rest/v2/name/"
 const travelWarnUrl = "https://www.travel-advisory.info/api"
 
 const currencyDomain = "https://free.currconv.com/api/v7/convert?q=USD_EUR,EUR_USD&compact=ultra"
-const currencyApiKey = "3008f48cb4daac91be77"
-const currencyUrl = `${currencyDomain}&apiKey=${currencyApiKey}`
+const currencyKey = config.MY_KEY
+const currencyUrl = `${currencyDomain}&apiKey=${currencyKey}`
 
 
 

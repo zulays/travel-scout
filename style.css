@@ -1,12 +1,12 @@
 body{
   text-align: center;
-
-
+  font-family: ;
+  font-size: 14px;
 
 }
 
 header {
-  background: url()
+  background: url();
   background-size: cover;  
 
 }
@@ -39,4 +39,6 @@ footer {
 }
 
 
-@media 
+@media  (max-width: 1920px){
+
+}
