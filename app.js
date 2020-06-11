@@ -5,8 +5,6 @@ const currencyDomain = "https://free.currconv.com/api/v7/convert?q=USD_"
 const currencyKey = config.MY_KEY
 
 
-
-
 let submitBtn = document.querySelector("#button")
 let input = document.querySelector("#blank")
 const countryDiv = document.querySelector(".country-details")
@@ -37,14 +35,12 @@ async function getCountryData() {
 
     //runs the secondary function to pull API #2 data via API #1, while creating a link to allow API #3 to run
     getTravelData(countries[0].alpha2Code,currVal)
-
+   input.value = ""
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
-  }
+  }  
 }
-submitBtn.addEventListener("click", () => {
-  getCountryData()
-})
+submitBtn.addEventListener("click", getCountryData)
 
 
 // //API #2 for travel warnings
@@ -67,10 +63,12 @@ console.log(countryVal)
       <p>Active source count: ${countryVal[0].advisory.sources_active}</p>
       <p>${countryVal[0].advisory.message}</p>
       <p>Last updated: ${countryVal[0].advisory.updated}</p>
-      <p><a href=${countryVal[0].advisory.source}>View more data on site</a></p>
+      <p><a href=${countryVal[0].advisory.source}>Sources detailed on site</a></p>
+      <p>*Disclaimer: Please note that not all countries have travel advisories available*</p>
       `
       //calls terciary function while getting information from API #1 via chained API #2
       getCurrencyData(money)
+      
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
@@ -85,25 +83,29 @@ async function getCurrencyData(money) {
     console.log(response)
 
     //defines the currency code for conversion 
-  currencyInput.value = money
+    currencyInput.value = money
     
-    //helper function --- math equation in here
+    //pulls out the conversion rate for USD_currency code 
+    let currencyVal = Object.values(currency).find((rate) => {
+      return rate
+    })
+  console.log(currencyVal)
+
   } catch (error) {
-    console.log(`This is what went wrong: ${error}`)
+    console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
 }
 
-// convertBtn.addEventListener("click", getCurrencyData())
 
+//Function - Currency Conversion
+  // let baseCurrency = 1
+  // let newCurrency = money
+  // // let exchange = Math.float()
 
-//Helper function - Currency Conversion
-//   let baseCurrency = 1
-//   let newCurrency = money
-//   let exchange = Math.float()
-
-//   function currencyConv(baseCurrency, newCurrency) {
-//     return base
+  // function currencyConv(baseCurrency, newCurrency) {
+  //   return base
   
-// // }
-// // // console.log(currencyConv(1, ))
-// // // currencyConv()
+// }
+// // console.log(currencyConv(1, ))
+// // currencyConv()
+// convertBtn.addEventListener("click", currencyConv)

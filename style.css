@@ -51,6 +51,18 @@ div > h1 {
   border-radius: 4px;
 }
 
+#blank-num,
+#blank-conv {
+  width: 70px; 
+}
+
+#blank-code {
+  width: 50px; 
+}
+
+
+
+
 button {
     margin: 12px;
     background-color: #f5f5f5;
