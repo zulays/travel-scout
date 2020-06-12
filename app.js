@@ -9,8 +9,13 @@ let submitBtn = document.querySelector("#button")
 let input = document.querySelector("#blank")
 const countryDiv = document.querySelector(".country-details")
 const warningDiv = document.querySelector(".travel-warn")
+let travelPage = document.querySelector("#page2")
+let countryInput = document.querySelector(".country-input")
 let currencyInput = document.querySelector("#blank-code")
+let amountInput = document.querySelector("#blank-num")
 let convertBtn = document.querySelector("#currency-button")
+let currencyVal 
+
 
 //API #1 for country data
 async function getCountryData() {
@@ -31,7 +36,11 @@ async function getCountryData() {
       `
            })
     let currVal = countries[0].currencies[0].code
-    console.log(response)
+    // console.log(response)----delete
+
+    travelPage.style.display = "block"
+    countryInput.style.display = "none"
+  
 
     //runs the secondary function to pull API #2 data via API #1, while creating a link to allow API #3 to run
     getTravelData(countries[0].alpha2Code,currVal)
@@ -57,6 +66,7 @@ async function getTravelData(code,money) {
   })
 console.log(countryVal)
 
+
        warningDiv.innerHTML += `
       <h2>${countryVal[0].name}</h2>
       <p>Degree of risk: ${countryVal[0].advisory.score}/5</p>
@@ -66,8 +76,10 @@ console.log(countryVal)
       <p><a href=${countryVal[0].advisory.source}>Sources detailed on site</a></p>
       <p>*Disclaimer: Please note that not all countries have travel advisories available*</p>
       `
-      //calls terciary function while getting information from API #1 via chained API #2
+         
+      //calls terciary function while getting information from API #1 chained via  API #2
       getCurrencyData(money)
+
       
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
@@ -86,26 +98,24 @@ async function getCurrencyData(money) {
     currencyInput.value = money
     
     //pulls out the conversion rate for USD_currency code 
-    let currencyVal = Object.values(currency).find((rate) => {
-      return rate
+    currencyVal = Object.values(currency).find((value) => {
+      return value
     })
-  console.log(currencyVal)
-
+ 
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
+  
 }
 
+function currencyConv() {
+  let baseCurrency = amountInput.value
+  newCurrency = currencyVal
 
-//Function - Currency Conversion
-  // let baseCurrency = 1
-  // let newCurrency = money
-  // // let exchange = Math.float()
 
-  // function currencyConv(baseCurrency, newCurrency) {
-  //   return base
-  
-// }
-// // console.log(currencyConv(1, ))
-// // currencyConv()
-// convertBtn.addEventListener("click", currencyConv)
+  console.log(newCurrency) 
+
+}
+
+convertBtn.addEventListener("click", currencyConv)
+  // console.log(newCurrency)

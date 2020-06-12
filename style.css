@@ -2,12 +2,14 @@ body{
   text-align: center;
   font-family: Allerta, sans-serif;
   font-size: 14px;
+  background: url("https://wallpaperplay.com/walls/full/7/e/8/396499.jpg");
+  background-size: cover;  
 }
 
 header {
-  background: url();
-  background-size: cover;  
+  
   font-family: Allerta Stencil, sans-serif;
+  font-size: 80px;
 }
 
 div > h1 {
@@ -44,7 +46,7 @@ div > h1 {
   position: relative;
   background-color: #f5f5f5;
   margin: 30px;
-  padding: 50px;
+  padding: 40px;
   text-align: center;
   display: block;
   border: 2px solid #000050;
@@ -53,11 +55,11 @@ div > h1 {
 
 #blank-num,
 #blank-conv {
-  width: 70px; 
+  width: 100px; 
 }
 
 #blank-code {
-  width: 50px; 
+  width: 85px; 
 }
 
 
@@ -73,8 +75,10 @@ button {
   }
 
 #page2 {
-  display: inline-block;
-  font-family:;
+  display: none;
+  /* font-family:; */
+
+  
 }
 
 a {
@@ -86,6 +90,11 @@ a {
 footer {
   text-decoration: none;
   color:#000040;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  padding: 100px 10px;
+
 }
 
 
