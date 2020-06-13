@@ -16,6 +16,9 @@ let convInput = document.querySelector("#blank-conv")
 let convertBtn = document.querySelector("#currency-button")
 let currencyInput = document.querySelector("#blank-code")
 let currencyVal
+let counPage = document.querySelector(".countrydetails-container")
+let warnPage = document.querySelector(".warn-container")
+let currPage = document.querySelector(".currency-container")
 
 
 //API #1 for country data
@@ -29,10 +32,10 @@ async function getCountryData() {
     }
     countries.forEach((country) => {
       countryDiv.innerHTML += `
-      <h2>${country.name}</h2>
+      <h4>${country.name}</h4>
       <img src=${country.flag}>
       <p>Capital City is ${country.capital}</p>
-      <p class="currency-name">Main currency used is ${country.currencies[0].code}</p>
+      <p>Main currency used is ${country.currencies[0].code}</p>
       <p>Primary language spoken is ${country.languages[0].name}</p>
       `
     })
@@ -41,8 +44,10 @@ async function getCountryData() {
     // console.log(response)----delete
 
     travelPage.style.display = "flex"
+    counPage.style.display = "inline-block"
+    warnPage.style.display = "inline-block"
     countryInput.style.display = "none"
-
+    currPage.style.display = "inline-block"
 
     //runs the secondary function to pull API #2 data via API #1, while creating a link to allow API #3 to run
     getTravelData(countries[0].alpha2Code, currVal)
@@ -69,7 +74,7 @@ async function getTravelData(code, money) {
     })
 
     warningDiv.innerHTML += `
-      <h2>${countryVal[0].name}</h2>
+      <h4>${countryVal[0].name}</h4>
       <p>Degree of risk: ${countryVal[0].advisory.score}/5</p>
       <p>Active source count: ${countryVal[0].advisory.sources_active}</p>
       <p>${countryVal[0].advisory.message}</p>
@@ -96,6 +101,7 @@ async function getCurrencyData(money) {
 
     //defines the currency code for conversion 
     currencyInput.innerText += money
+    currencyInput.style.color = "#C9CAD9"
 
 
     //pulls out the conversion rate for USD_currency code 
