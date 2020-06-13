@@ -66,6 +66,13 @@ img {
   text-align: center;
 }
 
+.icon {
+  display: inline-flex;
+justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+
 .country-input,
 .travel-warn,
 .country-details,
@@ -181,7 +188,7 @@ footer {
 /* ----------------------- Media Queries  -----------------------  */
 
 
-@media  (max-width: 1920px){
+@media only screen and (max-width: 1920px){
 
 }
 

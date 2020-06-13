@@ -121,9 +121,12 @@ async function getCurrencyData(money) {
 function currencyConv() {
   baseCurrency = amountInput.value
   newCurrency = currencyVal
+  console.log(newCurrency)
 
   let conversion = baseCurrency * newCurrency
-  convInput.value = conversion
+  console.log(conversion)
+  convInput.value = Math.round(100 * conversion) / 100
+  
   amountInput.value = ""
   return conversion
 }
