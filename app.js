@@ -34,14 +34,14 @@ async function getCountryData() {
       countryDiv.innerHTML += `
       <h4>${country.name}</h4>
       <img src=${country.flag}>
-      <p>Capital City is ${country.capital}</p>
-      <p>Main currency used is ${country.currencies[0].code}</p>
-      <p>Primary language spoken is ${country.languages[0].name}</p>
+      <p class="js-ele">Capital City is ${country.capital}</p>
+      <p class="js-ele">Main currency used is ${country.currencies[0].code}</p>
+      <p class="js-ele">Primary language spoken is ${country.languages[0].name}</p>
       `
     })
 
     let currVal = countries[0].currencies[0].code
-    // console.log(response)----delete
+
 
     travelPage.style.display = "flex"
     counPage.style.display = "inline-block"
@@ -75,12 +75,12 @@ async function getTravelData(code, money) {
 
     warningDiv.innerHTML += `
       <h4>${countryVal[0].name}</h4>
-      <p>Degree of risk: ${countryVal[0].advisory.score}/5</p>
-      <p>Active source count: ${countryVal[0].advisory.sources_active}</p>
-      <p>${countryVal[0].advisory.message}</p>
-      <p>Last updated: ${countryVal[0].advisory.updated}</p>
-      <p><a href=${countryVal[0].advisory.source}>Sources detailed on site</a></p>
-      <p>*Disclaimer: Please note that not all countries have travel advisories available*</p>
+      <p class="js-ele">Degree of risk: ${countryVal[0].advisory.score}/5</p>
+      <p class="js-ele">Active source count: ${countryVal[0].advisory.sources_active}</p>
+      <p class="js-ele">${countryVal[0].advisory.message}</p>
+      <p class="js-ele">Last updated: ${countryVal[0].advisory.updated}</p>
+      <p class="js-ele"><a href=${countryVal[0].advisory.source}>Sources detailed on site</a></p>
+      <p class="js-ele">*Disclaimer: Please note that not all countries have travel advisories available*</p>
       `
 
     //calls terciary function while getting information from API #1 chained via  API #2
@@ -103,13 +103,10 @@ async function getCurrencyData(money) {
     currencyInput.innerText += money
     currencyInput.style.color = "#C9CAD9"
 
-
     //pulls out the conversion rate for USD_currency code 
     currencyVal = Object.values(currency).find((value) => {
       return value
     })
-
-
 
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
@@ -121,12 +118,9 @@ async function getCurrencyData(money) {
 function currencyConv() {
   baseCurrency = amountInput.value
   newCurrency = currencyVal
-  console.log(newCurrency)
 
   let conversion = baseCurrency * newCurrency
-  console.log(conversion)
   convInput.value = Math.round(100 * conversion) / 100
-  
   amountInput.value = ""
   return conversion
 }
