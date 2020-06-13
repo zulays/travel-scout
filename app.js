@@ -30,6 +30,7 @@ async function getCountryData() {
     for (let i = 0; i > countries.length; i++) {
       console.log(countries[i])
     }
+    countries.length = 1
     countries.forEach((country) => {
       countryDiv.innerHTML += `
       <h4>${country.name}</h4>
