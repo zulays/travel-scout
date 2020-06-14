@@ -105,17 +105,15 @@ async function getCurrencyData(money) {
 
     //defines the currency code for conversion 
     currencyInput.innerText += money
-    currencyInput.style.color = "#C9CAD9"
+    currencyInput.style.color = "#edf2f4"
 
     //pulls out the conversion rate for USD_currency code 
     currencyVal = Object.values(currency).find((value) => {
       return value
     })
-
   } catch (error) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
-
 }
 
 

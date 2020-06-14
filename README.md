@@ -184,7 +184,7 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 |June 9| Begin Core Application Structure (HTML, CSS, etc.) + Access API | Complete
 |June 10| Test API + MVP functionality | Complete
 |June 11| Continue API testing + implement advanced CSS/Flexbox | Complete
-|June 12| Post MVP execution + Application QA | In Progress
+|June 12| Post MVP execution + Application QA | Complete
 |June 15| Present | Incomplete
 
 ## Priority Matrix
@@ -195,16 +195,16 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Basic HTML Setup + Pseudocode | M | 2hrs| --hrs | --hrs |
-| Basic CSS Implementation | M | 3hrs| --hrs | --hrs |
-| Base JS Structure | H | 3hrs| --hrs | --hrs |
-| Building JS Algorithms for API | H | 3hrs| --hrs | --hrs |
-| Pre-lim API Setup + Access | H | 2hrs| --hrs | --hrs |
-| API sync with JS | H | 5hrs| --hrs | --hrs |
-| API Testing + Functionality | H | 5hrs| --hrs | --hrs |
-| Advanced CSS Add-ins (implementing themes + additional styling) | M | 4hrs| --hrs | --hrs |
-| Finalize Advanced CSS + Testing/Tweaks | M | 4hrs| --hrs | --hrs |
-| Application QA | H | 6hrs| --hrs | --hrs |
+| Basic HTML Setup + Pseudocode | M | 2hrs| 1hrs | 1hrs |
+| Basic CSS Implementation | M | 3hrs| 1hr 5mins | 1hr 5mins |
+| Base JS Structure | H | 3hrs| 1hr 50mins | 1hr 50mins |
+| Building JS Algorithms for API | H | 3hrs| 3hrs 30mins | 3hrs 30mins  |
+| Pre-lim API Setup + Access | H | 2hrs| 2hrs 15mins | 2hrs 15mins |
+| API sync with JS | H | 5hrs| 5hrs | 5hrs |
+| API Testing + Functionality | H | 5hrs| 5hrs | 5hrs |
+| Advanced CSS Add-ins (implementing themes + additional styling) | M | 4hrs| 3hrs 30mins | 3hrs 30mins |
+| Finalize Advanced CSS + Testing/Tweaks | M | 4hrs| 3hrs | 3hrs |
+| Application QA | H | 6hrs| 4hrs | 4hrs |
 | Total | H | 37hrs| --hrs | --hrs |
 
 ## Code Snippet
@@ -212,8 +212,21 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
 ```
-to be determined
+function currencyConv() {
+  baseCurrency = amountInput.value
+  newCurrency = currencyVal
+
+  let conversion = baseCurrency * newCurrency
+  convInput.value = Math.round(100 * conversion) / 100
+  amountInput.value = ""
+  return conversion
+}
+convertBtn.addEventListener("click", currencyConv)
 ```
+In the code snippet above, you can find the function created to conduct the conversion rate equation based on the input value entered by the user, that results in the conversion rate for the main currency used in the country they have selected. 
+
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+The changes made after intial submission of this proposal are as follows:
+- Country details only included one currency used + language spoken
+- Currency conversion became interactive and allows user to input whatever amount they desire to receive the value in return

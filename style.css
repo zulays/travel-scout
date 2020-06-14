@@ -29,10 +29,14 @@ h1 {
 
 h3 {
   font-family: "Chelsea Market", sans-serif;
+  display: block;
   font-size: 50px;
   color: #C9CAD9;
 }
 
+header{
+  margin: 20px;
+}
 
 div > h2 {
   font-family: "Chelsea Market", sans-serif;
@@ -40,8 +44,8 @@ div > h2 {
   position: relative;
   margin: 10px;
   text-align: center;
-  display: inline-block;
-  color: #edf2f4;
+  display: block;
+  color: #C9CAD9; 
 }
 
 /* ----------------------- Containers + Contents  -----------------------  */
@@ -49,9 +53,11 @@ div > h2 {
 .countrydetails-container,
 .warn-container{
   position: relative;
-  margin: 50px;
+  margin: 30px;
   text-align: center;
   display: none;
+  border: 5px solid #C9CAD9;
+  background-color: rgba(201, 202, 217, 0.2);
 }
 
 .currency-container {
@@ -59,6 +65,8 @@ div > h2 {
   margin: 20px;
   text-align: center;
   display: none;
+  border: 5px solid #C9CAD9;
+  background-color: rgba(201, 202, 217, 0.3);
 }
 
 
@@ -71,7 +79,7 @@ div > h2 {
   text-align: center;
   border-radius: 4px;
   font-size: 30px;
-  color: #C9CAD9;
+  color: #edf2f4;
   display: inline-block;
  
 }
@@ -81,11 +89,11 @@ p.country-details,
 p.js-ele, 
 h4 {
   position: relative;
-  margin: 30px;
+  margin: 20px;
   text-align: center;
   font-size: 30px;
   display: block;
-  color: #C9CAD9;;
+  color: #edf2f4;
 }
 
 .currency {
@@ -111,7 +119,7 @@ button {
     padding: 5px 10px;
     text-align: center;
     display: inline-block;
-    background-color: #edf2f4;
+    background-color: #C9CAD9;
     border-radius: 10px;
     color: #2b2d42;
   }
@@ -119,8 +127,8 @@ button {
 #page2 {
   display: flex;
   justify-content: center;
+  align-content: center;
   align-items: center; 
-
 }
 
 /* ----------------------- Inputs  -----------------------  */
@@ -150,7 +158,7 @@ input:-moz-placeholder { /* Firefox 18- */
 
 .curr-codes{
 display: inline;
-color: #C9CAD9;
+color: #edf2f4;
 font-family: "Chelsea Market", sans-serif;
 }
 
@@ -158,211 +166,185 @@ font-family: "Chelsea Market", sans-serif;
 /* ----------------------- Links + Footers  -----------------------  */
 
 a {
-  text-decoration: none;
+  /* text-decoration: none; */
   color:#edf2f4;
 }
 
 footer {
-  text-decoration: none;
+  bottom: 0;
+  text-align: center;
   color:#edf2f4;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
-  justify-content: center;
-  padding: 10px;
-  font-size: 15px;
-
+  justify-content: flex-end;
+  padding: 5px;
+  font-size: 12px;
 }
+
 
 
 /* ----------------------- Media Queries  -----------------------  */
   /* ----------------------- Basic CSS  -----------------------  */
   
-@media only screen (min-width: 320px) and (max-width: 1024px){
+  @media only screen and (min-width: 320px) and (max-width: 1024px){
 
-  body {
-  font-size: 20px;
-  display: flex;
-  flex-grow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  font-size: 50px;
-  text-align:center;
-  display: flex;
-  flex-grow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-h3 {
-  font-size: 25px;
-  text-align:center;
-  display: flex;
-  justify-content: center;
-  color: #C9CAD9;
-}
-
-div > h2 {
-  font-size: 20px;
-  position: relative;
-  margin: 10px;
-  text-align: center;
-  display: inline-block;
-  color: #edf2f4;
-}
-
-/* ----------------------- Containers + Contents  -----------------------  */
-
-.countrydetails-container,
-.warn-container{
-  position: relative;
-  margin: 10px;
-  text-align:center;
-  display: flex;
-  flex-grow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.currency-container {
-  position: relative;
-  margin: 10px;
-  text-align:center;
-  display: flex;
-  flex-grow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.country-input,
-.travel-warn,
-.country-details,
-.currency {
-  position: relative;
-  margin: 10px;
-  text-align: center;
-  border-radius: 4px;
-  /* font-size: 30px; */
-  color: #C9CAD9;
-  display: inline-block;
- 
-}
-
-p.travel-warn,
-p.country-details,
-p.js-ele, 
-h4 {
-  position: relative;
-  margin: 30px;
-  text-align: center;
-  font-size: 15px;
-  display: block;
-  color: #C9CAD9;;
-}
-
-.currency {
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #edf2f4;
-}
-
-img {
-  max-width: 300px;
-  height: 100px;
-  display: inline-block;
-  text-align: center;
-}
-
-
-button {
-  font-family: "Chelsea Market", sans-serif;
-  font-size: .2em;
-    margin: 50px;
-    /* padding: 5px 20px; */
+    body {
+    font-size: 20px;
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 50px;
+    text-align:center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h3 {
+    font-size: 25px;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    color: #C9CAD9;
+  }
+  
+  div > h2 {
+    font-size: 20px;
+    position: relative;
+    margin: 10px;
     text-align: center;
-    display: inline-block;
-    background-color: #edf2f4;
-    border-radius: 10px;
-    color: #2b2d42;
+    display: block;
+    color: #edf2f4;
+  }
+  
+  /* ----------------------- Containers + Contents  -----------------------  */
+  
+  .countrydetails-container,
+  .warn-container{
+    position: relative;
+    margin: 40px;
+    text-align:center;
+    display: none;
+    border: 5px solid #C9CAD9;
+    background-color: rgba(201, 202, 217, 0.3);
+  }
+  
+  .currency-container {
+    margin: 40px;
+    text-align:center;
+    display: none;
+    border: 5px solid #C9CAD9;
+    background-color: rgba(201, 202, 217, 0.2);
   }
 
-#page2 {
-  text-align:center;
-  display: flex;
-  flex-grow: column wrap;
-  justify-content: center;
-  align-items: center; 
+  .country-input,
+  .travel-warn,
+  .country-details,
+  .currency {
+    position: relative;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: #C9CAD9;
 
-}
-
-/* ----------------------- Inputs  -----------------------  */
-
-input[type=text]{
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #C9CAD9;
-  padding: 5px;
-  font-size: .2em;
-  font-family: "Quicksand", sans-serif;
-  color: #C9CAD9;
-}
-
-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #C9CAD9;
-}
-input::-moz-placeholder { /* Firefox 19+ */
-  color: #C9CAD9;
-}
-input:-ms-input-placeholder { /* IE 10+ */
-  color: #C9CAD9;
-}
-input:-moz-placeholder { /* Firefox 18- */
-  color: #C9CAD9;
-}
-
-.curr-codes{
-display: inline;
-color: #C9CAD9;
-font-family: "Chelsea Market", sans-serif;
-}
-
-
-/* ----------------------- Links + Footers  -----------------------  */
-
-a {
-  color:#edf2f4;
-}
-
-footer {
-  color:#edf2f4;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  font-size: 8px;
-
-}
-}
-
-
-
-
-/* how to get things to toggle show/hide
-<script type="text/javascript">
-<!--
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
+  }
+  
+  p.travel-warn,
+  p.country-details,
+  p.js-ele, 
+  h4 {
+    position: relative;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+    display: block;
+    color: #C9CAD9;;
+  }
+  
+  .currency {
+    margin: 10px ;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    color: #edf2f4;
+  }
+  
+  img {
+    max-width: 600px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  button {
+    font-family: "Chelsea Market", sans-serif;
+    font-size: 1em;
+      margin: 20px;
+      text-align: center;
+      display: inline-block;
+      background-color: #edf2f4;
+      border-radius: 10px;
+      color: #2b2d42;
     }
-//-->
-</script> */
+  
+  #page2 {
+    text-align:center;
+    margin: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  
+  /* ----------------------- Inputs  -----------------------  */
+  
+  input[type=text]{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #C9CAD9;
+    padding: 5px;
+    font-size: 1em;
+    font-family: "Quicksand", sans-serif;
+    color: #C9CAD9;
+  }
+  
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #C9CAD9;
+  }
+  input::-moz-placeholder { /* Firefox 19+ */
+    color: #C9CAD9;
+  }
+  input:-ms-input-placeholder { /* IE 10+ */
+    color: #C9CAD9;
+  }
+  input:-moz-placeholder { /* Firefox 18- */
+    color: #C9CAD9;
+  }
+  
+  .curr-codes{
+  display: inline-block;
+  color: #edf2f4;
+  font-family: "Chelsea Market", sans-serif;
+  }
+  
+  
+  /* ----------------------- Links + Footers  -----------------------  */
+  
+  a {
+    color:#edf2f4;
+  }
+  
+  footer {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+    bottom: 0;
+    color:#edf2f4;
+  }
+  }
