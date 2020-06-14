@@ -26,6 +26,7 @@ async function getCountryData() {
   try {
     let response = await axios.get(`${countryUrl}${input.value}`)
     let countries = response.data
+    console.log(countries)
 
     for (let i = 0; i > countries.length; i++) {
       console.log(countries[i])
@@ -41,6 +42,7 @@ async function getCountryData() {
       `
     })
 
+    
     let currVal = countries[0].currencies[0].code
 
 
@@ -81,7 +83,7 @@ async function getTravelData(code, money) {
       <p class="js-ele">${countryVal[0].advisory.message}</p>
       <p class="js-ele">Last updated: ${countryVal[0].advisory.updated}</p>
       <p class="js-ele"><a href=${countryVal[0].advisory.source}>Sources detailed on site</a></p>
-      <p class="js-ele">*Disclaimer: Please note that not all countries have travel advisories available*</p>
+      <p class="js-ele">*Please note that not all warnings may be available*</p>
       `
 
     //calls terciary function while getting information from API #1 chained via  API #2

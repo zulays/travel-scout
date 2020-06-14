@@ -1,33 +1,36 @@
-/* ----------------------- Basic CSS  -----------------------  */
-
-body{
-  text-align: center;
-  font-family: "Quicksand", sans-serif;
-  font-size: 80px;
-  height: 1000px;
-  background: url("https://res.cloudinary.com/zumariposa/image/upload/v1592013838/WebBackgrounddark_fiiawq.png");
+/* ----------------------- Background  -----------------------  */
+html {
+  background: url("https://res.cloudinary.com/zumariposa/image/upload/v1592013838/WebBackgrounddark_fiiawq.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 
+/* ----------------------- Basic CSS  -----------------------  */
+body{
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 30px;
+  height: 1000px;
+}
+
 header {
   font-family: "Chelsea Market", sans-serif;
-  font-size: 200px;
+  font-size: 50px;
   color: #C9CAD9;
 }
 
 div > h2 {
   font-family: "Chelsea Market", sans-serif;
-  font-size: 150px;
+  font-size: 30px;
   position: relative;
   margin: 10px;
-  padding: 20px 40px;
+  /* padding: 20px 40px; */
   text-align: center;
   display: inline-block;
-  /* background-color: rgba(100,100,100, .3); */
-  /* border: 2px solid #003049; */
-  /* border-radius: 4px; */
+  background-color: rgba(100,100,100, .3);
   color: #edf2f4;
 }
 
@@ -35,19 +38,18 @@ div > h2 {
 
 .countrydetails-container,
 .warn-container{
-  /* background-color: #f5f5f5; */
   position: relative;
-  margin: 100px;
-  padding: 30px;
+  margin: 50px;
+  padding: 20px;
   text-align: center;
   display: none;
+  background-color: rgba(100,100,100, .3);
 }
 
 .currency-container {
-  /* background-color: #f5f5f5; */
+  background-color: rgba(100,100,100, .3);
   position: relative;
-  margin: 100px;
-  padding: 30px;
+  margin: 20px;
   text-align: center;
   display: none;
 }
@@ -58,13 +60,10 @@ div > h2 {
 .country-details,
 .currency {
   position: relative;
-  /* background-color:rgba(100,100,100, 1); */
-  /* border: 2px solid #2b2d42; */
-  margin: 30px;
-  padding: 80px;
+  margin: 20px;
   text-align: center;
   border-radius: 4px;
-  font-size: 50px;
+  font-size: 30px;
   color: #C9CAD9;
  
 }
@@ -75,44 +74,36 @@ p.js-ele,
 h4 {
   position: relative;
   margin: 30px;
-  padding: 80px;
   text-align: center;
-  font-size: 80px;
+  font-size: 30px;
   display: block;
   color: #C9CAD9;;
 }
 
 .currency {
-  margin: 20px;
-  padding: 5px 10px;
+  margin: 10px;
   display: flex;
+  justify-content: center;
   align-items: center;
   color: #edf2f4;
 }
 
 img {
   max-width: 600px;
-  height: 300px;
+  height: 100px;
   display: inline-block;
   text-align: center;
 }
 
-/* .icon {
-  display: inline-flex;
-  justify-content: center;
-  width: 200px;
-  height: 200px;
-} */
 
 button {
   font-family: "Chelsea Market", sans-serif;
-  font-size: 2em;
+  font-size: 1em;
     margin: 50px;
     padding: 5px 20px;
     text-align: center;
     display: inline-block;
     background-color: #edf2f4;
-    /* border: 2px solid #2b2d42; */
     border-radius: 10px;
     color: #2b2d42;
   }
@@ -121,6 +112,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center; 
+
 }
 
 /* ----------------------- Inputs  -----------------------  */
@@ -130,7 +122,7 @@ input[type=text]{
   border: none;
   border-bottom: 2px solid #C9CAD9;
   padding: 5px;
-  font-size: 1.5em;
+  font-size: 1em;
   font-family: "Quicksand", sans-serif;
   color: #C9CAD9;
 }
@@ -147,12 +139,6 @@ input:-ms-input-placeholder { /* IE 10+ */
 input:-moz-placeholder { /* Firefox 18- */
   color: #C9CAD9;
 }
-
-
-/* input#blank-num,
-input#blank-conv {
-  width: 200px;
-} */
 
 .curr-codes{
 display: inline;
@@ -175,8 +161,8 @@ footer {
   flex-flow: column wrap;
   align-content: center;
   justify-content: center;
-  padding: 20px;
-  font-size: 80px;
+  padding: 10px;
+  font-size: 15px;
 
 }
 
