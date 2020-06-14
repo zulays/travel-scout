@@ -183,7 +183,7 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 |June 8| Project Proposal | Complete
 |June 9| Begin Core Application Structure (HTML, CSS, etc.) + Access API | Complete
 |June 10| Test API + MVP functionality | Complete
-|June 11| Continue API testing + implement advanced CSS/Flexbox | In Progress
+|June 11| Continue API testing + implement advanced CSS/Flexbox | Complete
 |June 12| Post MVP execution + Application QA | In Progress
 |June 15| Present | Incomplete
 

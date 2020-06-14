@@ -84,6 +84,7 @@ async function getTravelData(code, money) {
       <p class="js-ele">Last updated: ${countryVal[0].advisory.updated}</p>
       <p class="js-ele"><a href=${countryVal[0].advisory.source}>Sources detailed on site</a></p>
       <p class="js-ele">*Please note that not all warnings may be available*</p>
+      <p></p>
       `
 
     //calls terciary function while getting information from API #1 chained via  API #2
