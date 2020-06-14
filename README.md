@@ -205,7 +205,7 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 | Advanced CSS Add-ins (implementing themes + additional styling) | M | 4hrs| 3hrs 30mins | 3hrs 30mins |
 | Finalize Advanced CSS + Testing/Tweaks | M | 4hrs| 3hrs | 3hrs |
 | Application QA | H | 6hrs| 4hrs | 4hrs |
-| Total | H | 37hrs| --hrs | --hrs |
+| Total | H | 37hrs| 30hrs 16mins | 30hrs 16mins |
 
 ## Code Snippet
 
