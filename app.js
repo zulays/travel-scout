@@ -26,7 +26,6 @@ async function getCountryData() {
   try {
     let response = await axios.get(`${countryUrl}${input.value}`)
     let countries = response.data
-    console.log(countries)
 
     for (let i = 0; i > countries.length; i++) {
       console.log(countries[i])
