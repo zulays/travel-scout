@@ -7,7 +7,7 @@ Travel Scout
 
 ## Project Description
 
-The goal of this application is to help users plan their upcoming trip. They will input their desired location into a search bar and using APIs, country information (flag?, capital, currencies, and languages spoken) and travel warnings will be populated upon their form submission. 
+The goal of this application is to help users plan their upcoming trip. They will input their desired location into a search bar and using APIs, country information (flag, capital city, currencies, and languages spoken) and travel warnings will be populated upon their form submission. 
 
 
 ## API and Data Sample
@@ -228,5 +228,6 @@ In the code snippet above, you can find the function created to conduct the conv
 
 ## Change Log
 The changes made after intial submission of this proposal are as follows:
+
 - Country details only included one currency used + language spoken
 - Currency conversion became interactive and allows user to input whatever amount they desire to receive the value in return

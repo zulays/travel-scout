@@ -41,9 +41,7 @@ async function getCountryData() {
       `
     })
 
-    
     let currVal = countries[0].currencies[0].code
-
 
     travelPage.style.display = "flex"
     counPage.style.display = "inline-block"
@@ -51,7 +49,7 @@ async function getCountryData() {
     countryInput.style.display = "none"
     currPage.style.display = "inline-block"
 
-    //runs the secondary function to pull API #2 data via API #1, while creating a link to allow API #3 to run
+    //runs the secondary function pulling data to API #2 via API #1, while creating a link between them to allow API #3 to run
     getTravelData(countries[0].alpha2Code, currVal)
     input.value = ""
 
@@ -86,7 +84,7 @@ async function getTravelData(code, money) {
       <p></p>
       `
 
-    //calls terciary function while getting information from API #1 chained via  API #2
+    //calls tertiary function while getting information from API #1 chained via  API #2
     getCurrencyData(money)
 
 
@@ -102,11 +100,11 @@ async function getCurrencyData(money) {
     let response = await axios.get(`${currencyDomain}${money},${money}_USD&compact=ultra&apiKey=${currencyKey}`)
     let currency = response.data
 
-    //defines the currency code for conversion 
+    //defines the currency code for conversion via API #2 
     currencyInput.innerText += money
     currencyInput.style.color = "#edf2f4"
 
-    //pulls out the conversion rate for USD_currency code 
+    //pulls out the conversion rate value for "USD_currency code" 
     currencyVal = Object.values(currency).find((value) => {
       return value
     })
@@ -114,7 +112,6 @@ async function getCurrencyData(money) {
     console.log(`Uh Oh! This is what went wrong: ${error}`)
   }
 }
-
 
 function currencyConv() {
   baseCurrency = amountInput.value
@@ -125,5 +122,4 @@ function currencyConv() {
   amountInput.value = ""
   return conversion
 }
-
 convertBtn.addEventListener("click", currencyConv)
